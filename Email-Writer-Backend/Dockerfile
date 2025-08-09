@@ -3,26 +3,27 @@ FROM eclipse-temurin:17-jdk AS build
 
 WORKDIR /app
 
-# Copy Maven wrapper and config
+# Copy Maven wrapper and pom.xml first for caching
 COPY pom.xml .
 COPY mvnw .
-COPY mvnw.cmd .
-COPY .mvn/ .mvn/
+COPY .mvn .mvn
 
-# Download dependencies (offline mode for faster builds)
+# Give mvnw executable permission
+RUN chmod +x mvnw
+
+# Download dependencies
 RUN ./mvnw dependency:go-offline -B
 
 # Copy source code
-COPY src/ src/
+COPY src ./src
 
-# Package without running tests
+# Package without tests
 RUN ./mvnw clean package -DskipTests
 
 # ---------- Run stage ----------
 FROM eclipse-temurin:17-jdk
 WORKDIR /app
 
-# Copy JAR from build stage
 COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 8081
