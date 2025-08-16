@@ -22,8 +22,18 @@ public class EmailGeneratorController {
     @RequestMapping("/")
     @ResponseBody
     public String greet(){
-        return "Hello this is Email generator - Developed by Hasan Ravda";
+        return """
+               {
+                 "message": "Hello this is Email Generator - Developed by Hasan Ravda",
+                 "endpoint": "/api/email/generate",
+                 "method": "POST",
+                 "description": "Generate email replies with request body containing 'emailContent' and 'tone' fields",
+                 "example": {
+                   "emailContent": "Your email content here",
+                   "tone": "Professional"
+                 },
+                 "availableTones": ["Professional", "Friendly", "Casual", "Formal"]
+               }""";
     }
-
-
+    
 }
