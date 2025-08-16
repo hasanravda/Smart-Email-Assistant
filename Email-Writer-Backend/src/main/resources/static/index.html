@@ -333,6 +333,67 @@
                 justify-content: center;
             }
         }
+
+
+        /* Mobile & Tablet Responsive Fix */
+@media (max-width: 768px) {
+    /* Header */
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    /* Main content (cards stack) */
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    /* Features section stack */
+    .features {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Floating shapes lighter */
+    .shape {
+        transform: scale(0.7);
+        opacity: 0.2;
+    }
+}
+
+/* Extra small devices (phones < 480px) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .developer {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .footer {
+        font-size: 0.9rem;
+        padding: 18px;
+    }
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
     </style>
 </head>
 <body>
