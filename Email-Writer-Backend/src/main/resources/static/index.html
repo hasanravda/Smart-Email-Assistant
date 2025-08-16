@@ -95,6 +95,56 @@
             fill: currentColor;
         }
 
+        .download-section {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: slideUp 1s ease-out 0.2s both;
+        }
+
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4);
+            background: linear-gradient(135deg, #45a049, #4CAF50);
+        }
+
+        .download-button:active {
+            transform: translateY(-1px);
+        }
+
+        .download-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .download-info {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+            background: rgba(255,255,255,0.1);
+            padding: 12px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -244,6 +294,11 @@
             .features {
                 grid-template-columns: 1fr;
             }
+
+            .download-button {
+                padding: 18px 30px;
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -274,6 +329,20 @@
             </a>
         </div>
     </header>
+
+    <div class="download-section">
+        <a href="https://github.com/hasanravda/Smart-Email-Assistant/releases/download/v1.0.0/smart-email-assistant-extension.zip" 
+           class="download-button" 
+           download="smart-email-assistant-extension.zip">
+            <svg class="download-icon" viewBox="0 0 24 24">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+            </svg>
+            Download Browser Extension
+        </a>
+        <div class="download-info">
+            Chrome Extension v1.0.0 • Works with Gmail • Easy Installation
+        </div>
+    </div>
 
     <div class="main-content">
         <div class="card">

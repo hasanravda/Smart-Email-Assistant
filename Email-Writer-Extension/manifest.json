@@ -1,11 +1,14 @@
 {
-    "name": "Email Writer Assistant",
-    "description": "AI-powered email reply generator",
+    "name": "Smart Email Assistant - AI Reply Generator",
+    "description": "Intelligent AI-powered email reply generator for Gmail.",
     "version": "1.0",
     "manifest_version": 3,
+    "author": "Hasan Ravda",
+    "homepage_url": "https://github.com/hasanravda/smart-email-assistant",
     "permissions": ["activeTab","scripting","storage"],
     "host_permissions": [
       "https://localhost:8081/*",  
+      "https://smart-email-assistant-of06.onrender.com/*",
       "*://mail.google.com/*"
     ],
     "content_scripts": [
@@ -22,9 +25,21 @@
         "matches": ["*://mail.google.com/*"]
       }
     ],
-
     "action": {
-      "default_title": "Email Writer Assistant",
+      "default_title": "Smart Email Assistant",
       "default_icon": "smart-email-icon.png"
+    },
+    "commands": {
+        "generate_reply": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+G",
+                "mac": "Command+Shift+G"
+            },
+            "description": "Generate AI email reply"
+        }
+    },
+    "developer": {
+        "name": "Hasan Ravda",
+        "url": "https://github.com/hasanravda"
     }
   }
