@@ -73,7 +73,8 @@ function injectButton() {
 
             const emailContent = getEmailContent();
             // TODO : need to change the api after deploying
-            const response = await fetch('http://localhost:8081/api/email/generate', {
+            // http://localhost:8081/api/email/generate
+            const response = await fetch('https://smart-email-assistant-of06.onrender.com/api/email/generate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

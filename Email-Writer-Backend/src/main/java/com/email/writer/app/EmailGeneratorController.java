@@ -22,7 +22,7 @@ public class EmailGeneratorController {
     @RequestMapping("/")
     @ResponseBody
     public String greet(){
-        return "Hello this is Email generator";
+        return "Hello this is Email generator - Developed by Hasan Ravda";
     }
 
 
