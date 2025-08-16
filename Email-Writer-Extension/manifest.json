@@ -37,9 +37,6 @@
             },
             "description": "Generate AI email reply"
         }
-    },
-    "developer": {
-        "name": "Hasan Ravda",
-        "url": "https://github.com/hasanravda"
     }
+
   }
