@@ -14,26 +14,17 @@ public class EmailGeneratorController {
     private final EmailGeneratorService emailGeneratorService;
 
     @PostMapping("/generate")
-    public ResponseEntity<String> generateEmail(@RequestBody EmailRequest emailRequest){
+    public ResponseEntity<String> generateEmail(@RequestBody EmailRequest emailRequest) {
         String response = emailGeneratorService.generateEmailReply(emailRequest);
         return ResponseEntity.ok(response);
     }
 
     @RequestMapping("/")
     @ResponseBody
-    public String greet(){
-        return """
-               {
-                 "message": "Hello this is Email Generator - Developed by Hasan Ravda",
-                 "endpoint": "/api/email/generate",
-                 "method": "POST",
-                 "description": "Generate email replies with request body containing 'emailContent' and 'tone' fields",
-                 "example": {
-                   "emailContent": "Your email content here",
-                   "tone": "Professional"
-                 },
-                 "availableTones": ["Professional", "Friendly", "Casual", "Formal"]
-               }""";
+    public String greet() throws IOException {
+        // return "Hello this is Email generator - Developed by Hasan Ravda\n Use /generate endpoint to generate email replies with request body containing 'emailContent' and 'tone' fields.";
+        InputStream inputStream = getClass().getResourceAsStream("/static/index.html");
+        return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
     }
-    
+
 }
